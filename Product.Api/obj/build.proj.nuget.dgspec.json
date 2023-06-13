@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "restore": {
+    "/workspaces/product_api/Product.Api/build.proj": {}
+  },
+  "projects": {
+    "/workspaces/product_api/Product.Api/build.proj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/product_api/Product.Api/build.proj",
+        "projectName": "build",
+        "projectPath": "/workspaces/product_api/Product.Api/build.proj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/product_api/Product.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.203/sdk/7.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
