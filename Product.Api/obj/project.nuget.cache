@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3wUzicC6pB2r+UqFWi2QCSUf4wokMnyXWiOYt/k7fJn5OPrKMKlRBcrQwnM8Izu0/DQbozSPDq1RG8GdbtdQqQ==",
+  "dgSpecHash": "mnB/cw2aSWFeRxwOocDrVocRbyVQTXcLAvs2j60Y2GZ7TBLu47UPvrwNymRifLjjkhjFhe9Z+5YSctmvkikuag==",
   "success": true,
-  "projectFilePath": "/workspaces/product_api/Product.Api/build.proj",
+  "projectFilePath": "C:\\Users\\USER\\Source\\Repos\\product_api\\Product.Api\\build.proj",
   "expectedPackageFiles": [],
   "logs": []
 }

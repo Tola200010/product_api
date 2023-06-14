@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductApi.Dto;
-public record CreateItemDto([Required] string name,[Required] double price);
+public record CreateItemDto([Required] string Name,[Required] double Price);
+public record ItemDto(Guid Id,string Name,double Price, DateTimeOffset CreatedDate);

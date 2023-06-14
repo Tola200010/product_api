@@ -1,44 +1,52 @@
-using MongoDB.Bson;
-using MongoDB.Driver;
+
+using Microsoft.EntityFrameworkCore;
+using ProductApi.Data;
 using ProductApi.Entities;
 using ProductApi.Repositories.Contracts;
 
 namespace ProductApi.Repositories;
 public class ItemRepository : IItemRepository
 {
-    private const string databaseName = "catalog";
-    private const string collectionName = "items";
-    private readonly IMongoCollection<Item> _itemsCollection;
-    private readonly FilterDefinitionBuilder<Item> _filterBuilder = Builders<Item>.Filter;
-    public ItemRepository(IMongoClient client){
-        var database = client.GetDatabase(databaseName);
-        _itemsCollection = database.GetCollection<Item>(collectionName);
-    }
-    public async Task CreateItemAsync(Item item)
-    {
-       await _itemsCollection.InsertOneAsync(item);
-    }
+	private readonly DataContext _dataContext;
 
-    public async Task DeleteAsync(Guid id)
-    {
-        var filter = _filterBuilder.Eq(item=>item.ItemId, id);
-        await _itemsCollection.DeleteOneAsync(filter);
-    }
+	public ItemRepository(DataContext dataContext)
+	{
+		_dataContext = dataContext;
+	}
+	public async Task<Item?> GetAsync(Guid id)
+	{
+		return await _dataContext.Items!.FindAsync(id);
+	}
 
-    public async Task<IEnumerable<Item>> GetAllAsync()
-    {
-        return await _itemsCollection.Find(new BsonDocument()).ToListAsync();
-    }
+	public async Task<IEnumerable<Item>> GetAllAsync()
+	{
+		var items = await _dataContext.Items!.ToListAsync();
+		return items;
+	}
 
-    public async  Task<Item?> GetAsyn(Guid id)
-    {
-        var filter = _filterBuilder.Eq(item=>item.ItemId, id);
-        return await _itemsCollection.Find(filter).FirstOrDefaultAsync();
-    }
+	public async Task<Item> CreateItemAsync(Item item)
+	{
+		await _dataContext.Items!.AddAsync(item);
+		await _dataContext.SaveChangesAsync();
+		return item;
+	}
 
-    public async Task UpdateAsync(Item item)
-    {
-        var filter= _filterBuilder.Eq(existsItem => existsItem.ItemId,item.ItemId);
-        await _itemsCollection.ReplaceOneAsync(filter,item);
-    }
+	public async Task<bool> UpdateAsync(Item item)
+	{
+		 _dataContext.Items!.Update(item);
+		 var result = await _dataContext.SaveChangesAsync();
+		 return result > 0;
+	}
+
+	public async Task<bool> DeleteAsync(Guid id)
+	{
+		 var item =await _dataContext.Items!.FindAsync(id);
+		 if (item == null)
+		 {
+			 return false;
+		 }
+		 _dataContext.Items!.Remove(item);
+		 var result = await _dataContext.SaveChangesAsync();
+		 return result > 0;
+	}
 }

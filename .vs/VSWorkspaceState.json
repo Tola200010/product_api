@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Product.Api",
+    "\\Product.Api\\ProductApi",
+    "\\Product.Api\\ProductApi.UnitTests",
+    "\\Product.Api\\ProductApi\\Entities"
+  ],
+  "SelectedNode": "\\Product.Api",
+  "PreviewInSolutionExplorer": false
+}

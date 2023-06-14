@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Dto;
 using ProductApi.Entities;
+using ProductApi.Extensions;
 using ProductApi.Repositories.Contracts;
 
 namespace ProductApi.Controllers;
@@ -15,33 +16,41 @@ public class ItemController : ControllerBase
         _itemRepository = itemRepository;
     }
     [HttpGet]
-    public async Task<IActionResult> GetAllAsync()
+    public async Task<ActionResult<IEnumerable<ItemDto>>> GetAllAsync()
     {
-        return Ok(await _itemRepository.GetAllAsync());
+	    var items = (await _itemRepository.GetAllAsync())
+		    .Select(x => x.AsDto());
+	    return Ok(items);
     }
     [HttpGet("/id")]
-    public async Task<IActionResult> GetAsync(Guid id)
+    public async Task<ActionResult<ItemDto>> GetAsync(Guid id)
     {
-        return Ok(await _itemRepository.GetAsyn(id));
+	    var item = await _itemRepository.GetAsync(id);
+	    if (item == null)
+	    {
+		    return NotFound();
+	    }
+
+	    return item.AsDto();
     }
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] CreateItemDto createItem)
     {
         if(!ModelState.IsValid) return BadRequest(ModelState);
-        var item = new Item()
+        var item = new Item
         {
             ItemId = Guid.NewGuid(),
-            Name = createItem.name,
-            Price = createItem.price,
+            Name = createItem.Name,
+            Price = createItem.Price,
             CreatedDate = DateTimeOffset.Now
         };
         await _itemRepository.CreateItemAsync(item);
-        return Created(nameof(GetAsync),new{id = item.ItemId});
+        return Ok();
     }
     [HttpDelete("/id")]
     public async Task<IActionResult> DeleteAsync(Guid id)
     {
-       var item = await _itemRepository.GetAsyn(id);
+       var item = await _itemRepository.GetAsync(id);
        if(item is null) return BadRequest();
        await _itemRepository.DeleteAsync(id);
        return Ok(item);
