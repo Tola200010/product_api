@@ -1,8 +1,8 @@
 namespace ProductApi.Entities;
 public record Item
 {
-    public Guid ItemId { get; init;}
-    public string? Name { get; init;}
-    public double Price { get; init;}
-    public DateTimeOffset CreatedDate { get; init;}
+    public Guid ItemId { get; set;}
+    public string? Name { get; set; }
+    public double Price { get; set; }
+    public DateTimeOffset CreatedDate { get; set; }
 }

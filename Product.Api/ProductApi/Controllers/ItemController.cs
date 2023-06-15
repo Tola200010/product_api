@@ -34,7 +34,7 @@ public class ItemController : ControllerBase
 	    return item.AsDto();
     }
     [HttpPost]
-    public async Task<IActionResult> PostAsync([FromBody] CreateItemDto createItem)
+    public async Task<ActionResult<ItemDto>> PostAsync([FromBody] CreateItemDto createItem)
     {
         if(!ModelState.IsValid) return BadRequest(ModelState);
         var item = new Item
@@ -45,14 +45,29 @@ public class ItemController : ControllerBase
             CreatedDate = DateTimeOffset.Now
         };
         await _itemRepository.CreateItemAsync(item);
-        return Ok();
+        return CreatedAtAction("GetAsync", new { id = item.ItemId }, item.AsDto());
     }
-    [HttpDelete("/id")]
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> UpdateAsync(Guid id,[FromBody] UpdateItemDto updateItem)
+    {
+	    if (!ModelState.IsValid) return BadRequest(updateItem);
+        var existing = await _itemRepository.GetAsync(id);
+        if (existing == null)
+        {
+	        return NotFound();
+        }
+
+        existing.Name = updateItem.Name;
+        existing.Price = updateItem.Price;
+        await _itemRepository.UpdateAsync(existing);
+        return NoContent();
+    }
+    [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteAsync(Guid id)
     {
        var item = await _itemRepository.GetAsync(id);
-       if(item is null) return BadRequest();
+       if(item is null) return NotFound();
        await _itemRepository.DeleteAsync(id);
-       return Ok(item);
+       return NoContent();
     }
 }

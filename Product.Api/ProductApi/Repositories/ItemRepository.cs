@@ -33,7 +33,7 @@ public class ItemRepository : IItemRepository
 
 	public async Task<bool> UpdateAsync(Item item)
 	{
-		 _dataContext.Items!.Update(item);
+		_dataContext.Items!.Update(item);
 		 var result = await _dataContext.SaveChangesAsync();
 		 return result > 0;
 	}
