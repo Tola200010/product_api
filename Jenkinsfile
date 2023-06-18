@@ -22,7 +22,7 @@ dotnet test
     stage('Build') {
       steps {
         sh '''#!/bin/bash
-docker build .
+sudo docker build .
 '''
       }
     }
