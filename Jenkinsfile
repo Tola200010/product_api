@@ -19,5 +19,13 @@ dotnet test
       }
     }
 
+    stage('Build') {
+      steps {
+        sh '''#!/bin/bash
+docker-compose up -d
+'''
+      }
+    }
+
   }
 }
