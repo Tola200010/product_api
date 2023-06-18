@@ -22,7 +22,7 @@ dotnet test
     stage('Build') {
       steps {
         sh '''#!/bin/bash
-sudo docker-compose up -d
+docker-compose up -d
 '''
       }
     }
