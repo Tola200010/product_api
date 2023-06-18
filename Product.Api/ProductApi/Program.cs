@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ProductApi.Data.DataContext>(option =>
 {
-	option.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+	option.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
 var app = builder.Build();
 

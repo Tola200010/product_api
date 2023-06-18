@@ -1,5 +1,4 @@
-﻿using Castle.Components.DictionaryAdapter;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using ProductApi.Controllers;
@@ -7,20 +6,13 @@ using ProductApi.Dto;
 using ProductApi.Entities;
 using ProductApi.Repositories.Contracts;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace ProductApi.UnitTests;
 
 public class ItemControllerTest
 {
-	private readonly ITestOutputHelper _testOutputHelper;
 	private readonly Mock<IItemRepository> _itemRepositoryMock = new();
-	private readonly Random _random = new Random();
-
-	public ItemControllerTest(ITestOutputHelper testOutputHelper)
-	{
-		_testOutputHelper = testOutputHelper;
-	}
+	private readonly Random _random = new();
 
 	[Fact]
 	public async Task UnitOfWork_StateUnderTest_ReturnNotFound()

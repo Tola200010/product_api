@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProductApi.UnitTests
-build_property.ProjectDir = C:\Users\USER\source\repos\product_api\Product.Api\ProductApi.UnitTests\
+build_property.ProjectDir = /Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/

@@ -1,42 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi.UnitTests\\ProductApi.UnitTests.csproj": {}
+    "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/ProductApi.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi.UnitTests\\ProductApi.UnitTests.csproj": {
+    "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/ProductApi.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi.UnitTests\\ProductApi.UnitTests.csproj",
+        "projectUniqueName": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/ProductApi.UnitTests.csproj",
         "projectName": "ProductApi.UnitTests",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi.UnitTests\\ProductApi.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi.UnitTests\\obj\\",
+        "projectPath": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/ProductApi.UnitTests.csproj",
+        "packagesPath": "/Users/hcpshop/.nuget/packages/",
+        "outputPath": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi.UnitTests/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/hcpshop/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\ProductApi.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\ProductApi.csproj"
+              "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/ProductApi.csproj": {
+                "projectPath": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/ProductApi.csproj"
               }
             }
           }
@@ -96,35 +87,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\ProductApi.csproj": {
+    "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/ProductApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\ProductApi.csproj",
+        "projectUniqueName": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/ProductApi.csproj",
         "projectName": "ProductApi",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\ProductApi.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\product_api\\Product.Api\\ProductApi\\obj\\",
+        "projectPath": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/ProductApi.csproj",
+        "packagesPath": "/Users/hcpshop/.nuget/packages/",
+        "outputPath": "/Users/hcpshop/Desktop/ProductApi/product_api/Product.Api/ProductApi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/hcpshop/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
+          "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -153,10 +136,6 @@
               "target": "Package",
               "version": "[8.0.0-preview.5.23280.1, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.0-preview.5.23280.1, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -166,6 +145,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.19.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -191,7 +174,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
