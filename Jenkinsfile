@@ -7,5 +7,17 @@ pipeline {
       }
     }
 
+    stage('Test Unit Test') {
+      steps {
+        sh '''
+cd Product.Api/ProductApi.UnitTests/ 
+
+#!/bin/bash
+dotnet build
+dotnet test
+'''
+      }
+    }
+
   }
 }
